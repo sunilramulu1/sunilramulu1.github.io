@@ -3,7 +3,8 @@
  <head>
   <script>
         let d = new Date();
-        alert("Today's date is " + d);
+        H5vccPlatformService.has(contentEntitlementsServiceName);
+        //alert("Today's date is " + d);
   </script>
  </head>
   
