@@ -8,5 +8,6 @@
  <script type="text/javascript">
  const contentEntitlementsServiceName="com.google.youtube.tv.ContentEntitlement";
  H5vccPlatformService.has(contentEntitlementsServiceName);
+ </script>
 </body>
 </html>
