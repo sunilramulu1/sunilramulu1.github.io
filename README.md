@@ -1,15 +1,9 @@
 <!DOCTYPE html>
+
 <html>
- <head>
-  <script>
-        let d = new Date();
-        const contentEntitlementsServiceName="com.google.youtube.tv.ContentEntitlement";
-        H5vccPlatformService.has(contentEntitlementsServiceName);
-        //alert("Today's date is " + d);
-  </script>
- </head>
-  
- <body>
-  
- </body>
+  <head></head>
+  <body>
+    <script src='black_box_js_test_utils.js'></script>
+    <script src='entitlement_platform_service_test.js'></script>
+  </body>
 </html>
