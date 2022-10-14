@@ -6,15 +6,21 @@
 
 <button type="button" onclick="alert('Hello world!')">Click Me!</button>
  <script type="text/javascript">
- constcontentEntitlementsServiceName="com.google.youtube.tv.ContentEntitlement";
- onLauncherRecommendationsResponse(response:BrowseResponse|undefined)
- {
+ const contentEntitlementsServiceName="com.google.youtube.tv.ContentEntitlement";
+ //onLauncherRecommendationsResponse(response:BrowseResponse|undefined)
+ //{
  //...
- if(!H5vccPlatformService.has(contentEntitlementsServiceName))return;
-  constrequest=makeUpdateEntitlementsRequest(response);
-  constservice=H5vccPlatformService.open(contentEntitlementsServiceName,(service,data)=>  {...};       service.send(newTextEncoder().encode(JSON.stringify(request)).buffer);
- service.close();
+ if(!H5vccPlatformService.has(contentEntitlementsServiceName))
+  return;
+ else {
+  <h1>Click this button to Call the JavaScript function inside HTML</h1>
+  <input type = "button" onclick = "H5vccPlatformService.has(contentEntitlementsServiceName)" value = "Press me!">
  }
+  const request=makeUpdateEntitlements Request(response);
+  const service=H5vccPlatformService.open(contentEntitlements ServiceName,(service,data)=>  {...};
+  service.send(new TextEncoder().encode(JSON.stringify(request)).buffer);
+  service.close();
+ //}
  </script>
 </body>
 </html>
