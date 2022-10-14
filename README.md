@@ -12,10 +12,10 @@
  //...
  if(!H5vccPlatformService.has(contentEntitlementsServiceName))
   return;
- else {
+ 
   <h1>Click this button to Call the JavaScript function inside HTML</h1>
   <input type = "button" onclick = "H5vccPlatformService.has(contentEntitlementsServiceName)" value = "Press me!">
- }
+ 
   const request=makeUpdateEntitlements Request(response);
   const service=H5vccPlatformService.open(contentEntitlements ServiceName,(service,data)=>  {...};
   service.send(new TextEncoder().encode(JSON.stringify(request)).buffer);
