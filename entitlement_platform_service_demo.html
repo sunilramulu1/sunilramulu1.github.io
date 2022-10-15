@@ -44,6 +44,13 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
       // platforms that do not implement the extension.
       var has_soft_mic = true;
       var has_hard_mic = false;
+      
+      if (!H5vccPlatformService.has(SOFT_MIC_SERVICE_NAME)) {
+        // SOFT_MIC_SERVICE_NAME is not implemented. Fallback to current
+        // Soft Mic implementation.
+        console.error(`H5vccPlatformService.Has(${SOFT_MIC_SERVICE_NAME}) returned false.`);
+        return;
+      }
 
       if (!H5vccPlatformService) {
         // H5vccPlatformService is not implemented. Fallback to current Soft Mic
