@@ -23,7 +23,7 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
 
       var SOFT_MIC_SERVICE_NAME = "com.google.youtube.tv.ContentEntitlement";
 
-      if (!H5vccPlatformService.has(SOFT_MIC_SERVICE_NAME)) {
+      if (!kCEPlatformServiceApi.has(SOFT_MIC_SERVICE_NAME)) {
         // SOFT_MIC_SERVICE_NAME is not implemented. Fallback to current
         // Soft Mic implementation.
         console.error(`H5vccPlatformService.Has(${SOFT_MIC_SERVICE_NAME}) returned false.`);
