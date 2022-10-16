@@ -14,10 +14,10 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
   <script>
     async function testSoftMicPlatformService() {
       console.log("Hello world!");
-      if (!H5vccPlatformService) {
+      if (!kCEPlatformServiceApi) {
         // H5vccPlatformService is not implemented. Fallback to current Soft Mic
         // implementation.
-        console.error("H5vccPlatformService is not implemented");
+        console.error("kCEPlatformServiceApi is not implemented");
         return;
       }
 
