@@ -9,7 +9,7 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-  <h1>The button Element18</h1>
+  <h1>The button Element19</h1>
 
   <script>
     'use strict';
@@ -46,7 +46,7 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
 
       var CONTENT_ENTITLEMENT_SERVICE_NAME = "com.google.youtube.tv.ContentEntitlement";
 
-      if (!kCEPlatformServiceApi.has(CONTENT_ENTITLEMENT_SERVICE_NAME)) {
+      if (!H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME)) {
         // CONTENT_ENTITLEMENT_SERVICE_NAME is not implemented. 
         console.error(`kCEPlatformServiceApi.Has(${CONTENT_ENTITLEMENT_SERVICE_NAME}) returned false.`);
         return;
@@ -68,19 +68,19 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
 
           // It is now safe to close the platform service.
           if (service_send_done)
-            kCEPlatformServiceApi.close();
+            content_entitlement_service.close();
         } catch (error) {
           console.error(`receiveCallback() error: ${error}, str_response: ${str_response}`);
         }
       }
 
       // Open the service and pass the receive_callback.
-      var soft_mic_service = kCEPlatformServiceApi.open(CONTENT_ENTITLEMENT_SERVICE_NAME,
+      var content_entitlement_service = H5vccPlatformService.open(CONTENT_ENTITLEMENT_SERVICE_NAME,
                                   receiveCallback);
 
       // Async web app message for "getMicSupport".
       const entitlements = {"message":"updateEntitlements","payload":{"entitlements":[{"id":"1"},{"id":"2"}]}};
-      var response = kCEPlatformServiceApi.send(str2ab(JSON.stringify(entitlements)));
+      var response = content_entitlement_service.send(str2ab(JSON.stringify(entitlements)));
       try {
         if (new Int8Array(response)[0])
           console.log("send() platform response success.");
@@ -95,7 +95,7 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
       // the platform and a response is not received in the receiveCallback().
       var TIME_BEFORE_CLOSE = 10000;
       await new Promise(r => setTimeout(r, TIME_BEFORE_CLOSE));
-      kCEPlatformServiceApi.close();
+      content_entitlement_service.close();
     }
     testContentEntitlementPlatformService();
 
