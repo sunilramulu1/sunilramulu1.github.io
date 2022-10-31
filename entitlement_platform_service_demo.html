@@ -51,28 +51,6 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
         console.error(`kCEPlatformServiceApi.Has(${CONTENT_ENTITLEMENT_SERVICE_NAME}) returned false.`);
         return;
       }
-      
-      /**
-      * @param {ArrayBuffer} data
-      */
-      function receiveCallback(service, data) {
-        var str_response = ab2str(data);
-
-        try {
-          var response = JSON.parse(str_response);
-          var mic_gesture = response["micGesture"];
-          console.log(`receiveCallback() response:\n
-                       has_hard_mic: ${has_hard_mic}\n
-                       has_soft_mic: ${has_soft_mic}\n
-                       micGesture: ${mic_gesture}`);
-
-          // It is now safe to close the platform service.
-          if (service_send_done)
-            content_entitlement_service.close();
-        } catch (error) {
-          console.error(`receiveCallback() error: ${error}, str_response: ${str_response}`);
-        }
-      }
 
       // Open the service and pass the receive_callback.
       var content_entitlement_service = H5vccPlatformService.open(CONTENT_ENTITLEMENT_SERVICE_NAME,
