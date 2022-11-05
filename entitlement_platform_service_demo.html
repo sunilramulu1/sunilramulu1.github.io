@@ -44,13 +44,11 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
         return;
       }
       function receiveCallback(service, data) {
-        
+        //Callback function for receiving data
       }
 
       var CONTENT_ENTITLEMENT_SERVICE_NAME = "com.google.youtube.tv.ContentEntitlement";
-      H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME);
       
-      H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME);
       if (!H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME)) {
         // CONTENT_ENTITLEMENT_SERVICE_NAME is not implemented. 
         console.error(`kCEPlatformServiceApi.Has(${CONTENT_ENTITLEMENT_SERVICE_NAME}) returned false.`);
@@ -61,7 +59,6 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
       var content_entitlement_service = H5vccPlatformService.open(CONTENT_ENTITLEMENT_SERVICE_NAME,
                                   receiveCallback);
 
-      // Async web app message for "getMicSupport".
       const entitlements = {"message":"updateEntitlements","payload":{"entitlements":[{"id":"1"},{"id":"2"}]}};
       console.log("send() data=====>");
       var response = content_entitlement_service.send(str2ab(JSON.stringify(entitlements)));
