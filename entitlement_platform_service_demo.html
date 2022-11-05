@@ -45,7 +45,8 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
       }
 
       var CONTENT_ENTITLEMENT_SERVICE_NAME = "com.google.youtube.tv.ContentEntitlement";
-
+      H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME);
+      H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME);
       if (!H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME)) {
         // CONTENT_ENTITLEMENT_SERVICE_NAME is not implemented. 
         console.error(`kCEPlatformServiceApi.Has(${CONTENT_ENTITLEMENT_SERVICE_NAME}) returned false.`);
