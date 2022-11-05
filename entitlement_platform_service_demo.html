@@ -43,6 +43,9 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
         console.error("H5vccPlatformService is not implemented");
         return;
       }
+      function receiveCallback(service, data) {
+        
+      }
 
       var CONTENT_ENTITLEMENT_SERVICE_NAME = "com.google.youtube.tv.ContentEntitlement";
       H5vccPlatformService.has(CONTENT_ENTITLEMENT_SERVICE_NAME);
@@ -53,7 +56,7 @@ out/linux-x64x11_debug/cobalt --url=http://localhost:8000/soft_mic_platform_serv
         console.error(`kCEPlatformServiceApi.Has(${CONTENT_ENTITLEMENT_SERVICE_NAME}) returned false.`);
         return;
       }
-
+      
       // Open the service and pass the receive_callback.
       var content_entitlement_service = H5vccPlatformService.open(CONTENT_ENTITLEMENT_SERVICE_NAME,
                                   receiveCallback);
